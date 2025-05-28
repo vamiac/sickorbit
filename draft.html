@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sick Orbit</title>
+  <link rel="stylesheet" href="css2.css">
+  <link rel="icon" href="photo_2025-05-20_22-21-00.jpg" type="image/svg+xml">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: JetBrainsMono Nerd Font, 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .scroll-svg {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 1.5s infinite;
+      color: inherit;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    .scroll-svg:hover {
+      transform: translateX(-50%) translateY(4px) scale(1.2);
+      color: #66fcf1;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(10px); }
+    }
+
+    #site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #000;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-left img {
+      height: 50px;
+    }
+
+    .header-left h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #888;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background: #fff;
+      height: 3px;
+      margin: 4px 0;
+      width: 25px;
+    }
+
+    .hero {
+      background: #000;
+      color: #fff;
+    }
+
+    .interviews {
+      background: #fff;
+      color: #000;
+    }
+
+    .join {
+      background: #000;
+      color: #fff;
+    }
+
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem 1rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 200px;
+      text-align: center;
+      color: #000;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-20px);
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 1rem;
+        gap: 0.5rem;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header">
+    <div class="header-left">
+      <img src="photo_2025-05-20_22-21-00.jpg" alt="Silk Orbit Logo">
+      <h1>Sick Orbit</h1>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="nav-links" id="nav-menu">
+      <a href="#home">Home</a>
+      <a href="#interviews">Interviews</a>
+      <a href="#join">Join</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Some text</h2>
+    <div class="card-grid">
+      <div class="card">
+        <img src="group_students.svg" alt="Community" style="width: 100px;">
+        <p>Student Community</p>
+      </div>
+      <div class="card">
+        <img src="megaphone.svg" alt="Interviews" style="width: 100px;">
+        <p>Space Interviews</p>
+      </div>
+      <div class="card">
+        <img src="timer_stopwatch_efficiency.svg" alt="Challenges" style="width: 100px;">
+        <p>IAAC Challenges</p>
+      </div>
+    </div>
+    <a href="#interviews" class="scroll-svg">↓</a>
+  </section>
+
+  <section class="interviews" id="interviews">
+    <h2>Watch Our Interviews (they redirect to the same page and that page is yours)</h2>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="http://silkorbit.com/page66912505.html" target="_blank" style="display: inline-block; background: #000; color: #fff; padding: 1rem 2rem; margin: 1rem; border-radius: 8px; text-decoration: none; font-weight: bold;">
+        Full-Length Interviews
+      </a>
+      <a href="http://silkorbit.com/page66912505.html" target="_blank" style="display: inline-block; background: #000; color: #fff; padding: 1rem 2rem; margin: 1rem; border-radius: 8px; text-decoration: none; font-weight: bold;">
+        Short Interviews
+      </a>
+    </div>
+    <a href="#join" class="scroll-svg">↓</a>
+  </section>
+
+  <section class="join" id="join">
+    <h2>Join the Mission</h2>
+    <button onclick="window.location.href='https://youtu.be/xvFZjo5PgG0?si=5TGyPR51pc83lKWa'">a button</button>
+    <a href="#home" class="scroll-svg">↑</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sick Orbit.None of the rights are reserved. Everything is pirated and built on vibe coding.</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('nav-menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
